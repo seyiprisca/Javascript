@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<script src="jquery.js"></script>
+<script src= "bootstrap.js"></script>
+<meta charset=utf-8/>
+<title> Draw a Diagram using moveto() funtion</title>
+<script type="text/javascript">
+function draw(){
+var canvas= document.getElementById('canvas');
+if (canvas.getContext) {
+var context= canvas.getContext('2d');
+context.beginPath();
+//outer circle
+context.arc(75,75,50,0,Math.PI*2,true);
+context.moveTo(110,75);
+//mouth
+context.arc(75,75,35,0,Math.PI,false);
+//left and right eye
+context.moveTo(55,65);
+context.arc(60,65,5,0,Math.PI*2,true);
+context.arc(90,65,5,0,Math.PI*2,true);
+context.stroke();
+}
+}
+</script>
+</head>
+<body
+onload="draw();">
+<div class="panel panel-primary margin-top10">
+<div class="panel-heading">
+ Smiley 
+</div>
+<div class="panel-body height">
+<canvas id="canvas" width="250" height="250" class="bg-danger"> </canvas>
+</div>
+</body>
+</html>
